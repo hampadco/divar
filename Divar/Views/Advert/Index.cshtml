@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Divar.DataAccessLayer.Entities.Category>
+
+@{
+    ViewData["Title"] = "انتخاب دسته آگهی";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 main">
+
+    <div class="panel panel-default">
+
+        @foreach (var item in Model.Where(i => i.ParentId == null))
+        {
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion1" href="#@item.Id">@item.Name</a>
+                </h4>
+            </div>
+            <div id="@item.Id" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                    @if (Model.Any(i => i.ParentId == item.Id))
+                    {
+                        <div class="panel panel-default">
+
+                            @foreach (var subitem in Model.Where(i => i.ParentId == item.Id))
+                            {
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion2" href="#@subitem.Id">@subitem.Name</a>
+                                    </h4>
+                                </div>
+                                <div id="@subitem.Id" class="panel-collapse collapse">
+                                    <div class="panel-body">
+
+                                        @if (Model.Any(i => i.ParentId == subitem.Id))
+                                        {
+                                            <div class="panel panel-default">
+
+                                                @foreach (var subsubitem in Model.Where(i => i.ParentId == subitem.Id))
+                                                {
+                                                    <div class="panel-heading">
+
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" data-parent="#accordion3" href="#@subsubitem.Id">@subsubitem.Name</a>
+                                                        </h4>
+
+                                                    </div>
+                                                    <div id="@subsubitem.Id" class="panel-collapse collapse">
+
+                                                        <div class="panel-body">
+                                                            <a href="/Advert/Create/@subsubitem.Id" class="btn-red">انتخاب</a>
+                                                        </div>
+
+                                                    </div>
+                                                }
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="panel-body">
+                                                <a href="/Advert/Create/@subitem.Id" class="btn-red">انتخاب</a>
+                                            </div>
+                                        }
+
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="panel-body">
+                            <a href="/Advert/Create/@item.Id" class="btn-red">انتخاب</a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+
+    </div>
+
+</div>
+

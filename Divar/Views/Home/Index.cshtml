@@ -1,0 +1,33 @@
+﻿
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 main-right-column">
+
+            <h4 class="main text-center">سایت دیوار </h4>
+
+            <h4 class="mg-top-30 text-center">اگه دنبال چیزی هستی، شهرت رو انتخاب کن و تو دسته‌بندی‌ها به دنبالش بگرد.</h4>
+
+            <h4 class="mg-top-30 mg-bottom-30 text-center">اگر هم می‌خوای چیزی بفروشی، چند تا عکس خوب ازش بگیر و آگهیت رو بچسبون به دیوار.</h4>
+
+            <img src="~/images/enamad.png" alt="نماد اعتماد" width="100px" height="100px" class="img-responsive" style="margin: auto" />
+
+            <h4 class="main text-center">ما را در شبکه های اجتماعی دنبال کنید</h4>
+
+
+
+        </div>
+
+        <div class="col-lg-8 col-md-8">
+
+            <div class="main-left-column">
+                @(await Component.InvokeAsync("CityComponent", ViewBag.MyString))
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+

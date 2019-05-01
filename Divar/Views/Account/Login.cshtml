@@ -1,0 +1,44 @@
+﻿@model Divar.Core.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "ورود";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+
+            <h4 class="text-center">وارد حساب کاربری خود شوید</h4>
+
+            <hr />
+
+            <form asp-action="Login">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    @*<label asp-for="Mobile" class="control-label"></label>*@
+                    <input asp-for="Mobile" class="form-control", placeholder="شماره موبایل" />
+                    <span asp-validation-for="Mobile" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="Password" class="control-label"></label>*@
+                    <input asp-for="Password" class="form-control", placeholder="کلمه عبور" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="IsRemember" /> @Html.DisplayNameFor(model => model.IsRemember)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="ورود" class="btn-red" />
+                    <a asp-action="Forget" class="btn-red">فراموشی رمز</a>
+                    <a asp-action="Register" class="btn-red pull-left">عضویت</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+

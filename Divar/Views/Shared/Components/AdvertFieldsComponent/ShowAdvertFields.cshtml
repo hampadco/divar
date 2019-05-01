@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Divar.DataAccessLayer.Entities.AdvertField>
+
+@{
+    Layout = null;
+}
+
+<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
+
+    <table class="table table-hover">
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Field.Name</td>
+                    <td>@item.FieldValue</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

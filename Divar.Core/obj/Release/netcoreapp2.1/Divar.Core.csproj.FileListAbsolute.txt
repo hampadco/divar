@@ -1,0 +1,12 @@
+C:\Users\Rahim.Ghasemi\Desktop\Files\Divar.Core\bin\Release\netcoreapp2.1\Divar.Core.deps.json
+C:\Users\Rahim.Ghasemi\Desktop\Files\Divar.Core\bin\Release\netcoreapp2.1\Divar.Core.dll
+C:\Users\Rahim.Ghasemi\Desktop\Files\Divar.Core\bin\Release\netcoreapp2.1\Divar.Core.pdb
+C:\Users\Rahim.Ghasemi\Desktop\Files\Divar.Core\bin\Release\netcoreapp2.1\Divar.DataAccessLayer.dll
+C:\Users\Rahim.Ghasemi\Desktop\Files\Divar.Core\bin\Release\netcoreapp2.1\Divar.DataAccessLayer.pdb
+C:\Users\Rahim.Ghasemi\Desktop\Files\Divar.Core\obj\Release\netcoreapp2.1\Divar.Core.csprojAssemblyReference.cache
+C:\Users\Rahim.Ghasemi\Desktop\Files\Divar.Core\obj\Release\netcoreapp2.1\Divar.Core.csproj.CoreCompileInputs.cache
+C:\Users\Rahim.Ghasemi\Desktop\Files\Divar.Core\obj\Release\netcoreapp2.1\Divar.Core.AssemblyInfoInputs.cache
+C:\Users\Rahim.Ghasemi\Desktop\Files\Divar.Core\obj\Release\netcoreapp2.1\Divar.Core.AssemblyInfo.cs
+C:\Users\Rahim.Ghasemi\Desktop\Files\Divar.Core\obj\Release\netcoreapp2.1\Divar.Core.csproj.CopyComplete
+C:\Users\Rahim.Ghasemi\Desktop\Files\Divar.Core\obj\Release\netcoreapp2.1\Divar.Core.dll
+C:\Users\Rahim.Ghasemi\Desktop\Files\Divar.Core\obj\Release\netcoreapp2.1\Divar.Core.pdb

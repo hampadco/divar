@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Divar.DataAccessLayer.Entities.City>
+
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <form role="search" action="/Home/Index/" method="get">
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+            @Html.TextBox("strsearch", "", new { @class = "form-control", placeholder = "جستجو شهر ..." })
+        </div>
+    </form>
+</div>
+
+<div class="row mg-top-30">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+            <a asp-action="ShowAdverts" asp-controller="Home" asp-route-id="@item.Id" class="btn-city btn-block text-center">@item.Name</a>
+        </div>
+    }
+</div>
+

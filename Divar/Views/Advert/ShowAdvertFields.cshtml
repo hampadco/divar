@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Divar.DataAccessLayer.Entities.AdvertField>
+
+@{
+    ViewData["Title"] = "ShowAdvertFields";
+}
+
+
+<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+
+    <p class="text-center" style="margin-bottom: 30px">
+        <a href="#" class="btn-red" onclick='AddField(@ViewBag.MyId)'>ویژگی جـدیـد</a>
+    </p>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Field.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FieldValue)
+                </th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Field.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FieldValue)
+                    </td>
+                    <td>
+                        <a href="#" onclick='DeleteField(@item.Id)' class="btn-delete"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="bodyModal" class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function AddField(id) {
+        $.ajax({
+            url: "/Advert/AddAdvertField/" + id,
+            type: "Get",
+            data: {}
+        }).done(function (result) {
+            $('#myModal').modal('show');
+            $('#bodyModal').html(result);
+        });
+    }
+</script>
+
+<script>
+    function DeleteField(id) {
+        $.ajax({
+            url: "/Advert/DeleteAdvertField/" + id,
+            type: "Get",
+            data: {}
+        }).done(function (result) {
+            $('#myModal').modal('show');
+            $('#bodyModal').html(result);
+        });
+    }
+</script>

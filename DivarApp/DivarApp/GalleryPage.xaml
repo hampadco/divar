@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DivarApp.GalleryPage"
+             Title="نمایش تصاویر آگهی"
+             NavigationPage.TitleIcon="divar.png"
+            >
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                
+                <ListView ItemsSource="{Binding}" RowHeight="150" >
+                    <ListView.ItemTemplate >
+                        <DataTemplate >
+                            <ViewCell >
+                                <!--<StackLayout Margin="0,20,0,0">
+                                    <Image Source="{Binding Path=ImgUri}" Aspect="AspectFit" WidthRequest="{Binding MyWidth}" HeightRequest="{Binding MyHeight}" />
+                                    <Label Text="{Binding namep}" HeightRequest="{Binding MyHeight}"></Label>
+                                </StackLayout>-->
+
+                                <AbsoluteLayout  Margin="0,20,0,0">
+                                    <Image Source="{Binding Path=ImgUri}" Aspect="AspectFill" 
+               AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" 
+               AbsoluteLayout.LayoutBounds="0,0,1,270"/>
+
+                                    <Label Text="فرش علوی" TextColor="#E9EEF2" BackgroundColor="Fuchsia" FontAttributes="Bold" 
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+               Rotation="-45"
+               AbsoluteLayout.LayoutFlags="None" 
+               AbsoluteLayout.LayoutBounds="-23,15,100,20"/>
+
+                                    <Label Text="{Binding namep}" TextColor="#E9EEF2" BackgroundColor="Fuchsia" FontAttributes="Bold" 
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+               Rotation="0"
+               AbsoluteLayout.LayoutFlags="None" 
+               AbsoluteLayout.LayoutBounds="0,100,100,20"/>
+                               
+                                </AbsoluteLayout>
+                                
+                                
+
+                            </ViewCell>
+                        </DataTemplate>
+                        
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

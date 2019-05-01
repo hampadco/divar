@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DivarApp.DetailPage"
+             Title="نمایش آگهی ها"
+             NavigationPage.TitleIcon="divar.png"
+             BackgroundColor="#C0392B">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label x:Name="lblTitle" FontSize="Large" TextColor="White" />
+
+            <Label x:Name="lblDate" FontSize="Medium" TextColor="LightGray" />
+
+            <Label x:Name="lblUser" FontSize="Medium" TextColor="White" />
+
+            <Button BackgroundColor="White" TextColor="#C0392B" Text="نمایش تصاویر آگهی"
+                    WidthRequest="300" HeightRequest="50" Clicked="Button_Clicked" />
+
+            <Label x:Name="lblDes" Margin="0, 20, 0, 0" TextColor="WhiteSmoke" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

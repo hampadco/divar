@@ -1,0 +1,38 @@
+﻿/*Show Advert Gallery*/
+
+.mg-top-20 {
+    margin-top: 20px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.container {
+    position: relative;
+}
+
+.mySlides {
+    display: none;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.column {
+    float: right;
+    width: 16.66%;
+}
+
+    .column img {
+        height: 100%;
+    }
+
+.demo {
+    opacity: 0.6;
+}
+
+    .active, .demo:hover {
+        opacity: 1;
+    }

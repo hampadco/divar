@@ -1,0 +1,41 @@
+﻿@model Divar.Core.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "عضویت";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+
+            <h4 class="text-center">حساب کاربری خود را ایجاد کنید</h4>
+
+            <hr />
+
+            <form asp-action="Register">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    @*<label asp-for="Mobile" class="control-label"></label>*@
+                    <input asp-for="Mobile" class="form-control" , placeholder="شماره موبایل" />
+                    <span asp-validation-for="Mobile" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="Password" class="control-label"></label>*@
+                    <input asp-for="Password" class="form-control" , placeholder="کلمه عبور" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="ConfirmPassword" class="control-label"></label>*@
+                    <input asp-for="ConfirmPassword" class="form-control" , placeholder="تأیید کلمه عبور" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="ساخت حساب" class="btn-red pull-right" />
+                    <a asp-action="Login" class="btn-red pull-left">وارد شوید</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

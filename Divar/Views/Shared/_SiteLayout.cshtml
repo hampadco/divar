@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>@ViewBag.Title</title>
+
+    <link href="~/lib/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="~/css/Site.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row navbar-border-bottom">
+            <navbar>
+                <div class="navbar-left hidden-xs">
+
+                    <a asp-action="/" asp-controller="Home" class="menu-a">شرایط و قوانین</a>
+
+                    <a asp-action="/" asp-controller="Home" class="menu-a">درباره ما</a>
+
+                    <a asp-action="/" asp-controller="Home" class="menu-a">تماس با ما</a>
+
+                    <a asp-action="Index" asp-controller="Advert" class="btn-red">ثبت رایگان آگهی</a>
+                </div>
+                <div class="navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="dropdown">
+
+                            <button class="btn-red dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                پروفایل
+                                <span class="caret"></span>
+                            </button>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+                                <li><a asp-action="Index" asp-controller="Profile">میز کار</a></li>
+                                <li><a asp-action="ChangePassword" asp-controller="Profile">تغییر گذرواژه</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a asp-action="SignOut" asp-controller="Account">خـروج</a></li>
+                            </ul>
+
+                        </div>
+                    }
+                    else
+                    {
+                        <a asp-action="Login" asp-controller="Account" class="btn-red">ورود / عضویت</a>
+                    }
+                </div>
+            </navbar>
+        </div>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap-rtl.min.js"></script>
+    <script src="~/js/Site.js"></script>
+</body>
+</html>

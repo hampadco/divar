@@ -1,0 +1,14 @@
+﻿@model Divar.DataAccessLayer.Entities.Gallery
+
+@{
+    Layout = null;
+}
+
+@if (Model != null)
+{
+    <img src="~/images/adverts/@Model.Img" alt="" class="img-responsive" />
+}
+else
+{
+    <img src="~/images/default.png" alt="" class="img-responsive" />
+}

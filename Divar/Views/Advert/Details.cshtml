@@ -1,0 +1,56 @@
+﻿@model Divar.DataAccessLayer.Entities.Advert
+
+@{
+    Layout = null;
+}
+
+<div>
+    <h4>نمایش آگهی @Model.Name</h4>
+
+    <br />
+
+    <dl class="dl-horizontal">
+        
+        @*<dt class="dtdd">
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+        <dd class="dtdd">
+            <p>
+                @Model.Category.Name
+            </p>
+        </dd>*@
+        <dt class="dtdd">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class="dtdd">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class="dtdd">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="dtdd">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="dtdd">
+            @Html.DisplayNameFor(model => model.Des)
+        </dt>
+        <dd class="dtdd">
+            @Html.DisplayFor(model => model.Des)
+        </dd>
+        <dt class="dtdd">
+            @Html.DisplayNameFor(model => model.Seen)
+        </dt>
+        <dd class="dtdd">
+            @Html.DisplayFor(model => model.Seen)
+        </dd>
+        <dt class="dtdd">
+            @Html.DisplayNameFor(model => model.IsExpire)
+        </dt>
+        <dd class="dtdd">
+            @Html.DisplayFor(model => model.IsExpire)
+        </dd>
+    </dl>
+</div>
+<div class="form-padding">    
+    <a asp-action="Index" asp-controller="Profile" class="btn-red pull-left">بازگشت به لیست</a>
+</div>

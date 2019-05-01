@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Divar.DataAccessLayer.Entities.Gallery>
+
+@{
+    ViewData["Title"] = "ShowGallery";
+}
+
+<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+
+    <p class="text-center" style="margin-bottom: 30px">
+        <a href="#" class="btn-red" onclick='CreateGallery(@ViewBag.MyId)'>تصویر جـدیـد</a>
+    </p>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Img)
+                </th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="~/images/adverts/@item.Img" width="60" height="60" class="img-responsive" />
+                    </td>
+                    <td>
+                        <a href="#" onclick='DeleteGallery(@item.Id)' class="btn-delete"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div id="bodymodal" class="modal-body">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    function CreateGallery(id) {
+        $.ajax({
+            url: "/Advert/CreateGallery/" + id,
+            type: "Get",
+            data: {}
+        }).done(function (result) {
+            $('#myModal').modal('show');
+            $('#bodymodal').html(result);
+        });
+    }
+</script>
+
+<script>
+    function DeleteGallery(id) {
+        $.ajax({
+            url: "/Advert/DeleteGallery/" + id,
+            type: "Get",
+            data: {}
+        }).done(function (result) {
+            $('#myModal').modal('show');
+            $('#bodymodal').html(result);
+        });
+    }
+</script>

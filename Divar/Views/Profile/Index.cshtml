@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row main">
+
+        <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0" style="align-content: center; text-align: center">
+
+            <button class="tablink text-center" onclick="openTab('firstTab', this, '#e60000')" id="defaultOpen">
+                آگهی ها
+            </button>
+            <button class="tablink text-center" onclick="openTab('secondTab', this, '#e60000')">
+                نشان کرده ها
+            </button>
+            <button class="tablink text-center" onclick="openTab('thirdTab', this, '#e60000')">
+                آخرین بازدید
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="firstTab" class="tabcontent">
+    @(await Component.InvokeAsync("AdvertComponent"))
+</div>
+<div id="secondTab" class="tabcontent">
+    @(await Component.InvokeAsync("MarkComponent", ViewBag.MyId))
+</div>
+<div id="thirdTab" class="tabcontent">
+    @(await Component.InvokeAsync("VisitComponent", ViewBag.MyId))
+</div>
+

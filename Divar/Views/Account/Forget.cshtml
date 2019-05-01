@@ -1,0 +1,28 @@
+﻿@model Divar.Core.ViewModels.ForgetViewModel
+
+@{
+    ViewData["Title"] = "Forget";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+
+            <h4 class="text-center">دریافت کد تأیید برای تغییر کلمه عبور</h4>
+
+            <hr />
+            <form asp-action="Forget">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    @*<label asp-for="Mobile" class="control-label"></label>*@
+                    <input asp-for="Mobile" class="form-control", placeholder="شماره موبایل" />
+                    <span asp-validation-for="Mobile" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="دریافت کد تأیید" class="btn-red" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DivarApp"
+             x:Class="DivarApp.MainPage"
+             NavigationPage.TitleIcon="divar.png"
+             Title="اپلیکیشن دیوار نسخه 1"
+             BackgroundColor="tomato"
+              
+             
+             >
+
+    <ContentPage.Content>
+
+        <Grid Padding="10">
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="BtnCity" Clicked="BtnCity_Clicked" ContentLayout="Top, 20" Grid.Row="0" Grid.Column="0" BackgroundColor="White" TextColor="#C0392B" Text="آگهی ها" FontSize="Medium">
+
+                <Button.Image>
+
+                    <OnPlatform x:TypeArguments="FileImageSource">
+
+                        <On Platform="iOS, Android" Value="icons8search80.png" />
+
+                    </OnPlatform>
+
+                </Button.Image>
+
+            </Button>
+
+            <Button ContentLayout="Top, 20" Grid.Row="0" Grid.Column="1" BackgroundColor="White" TextColor="#C0392B" Text="درباره" FontSize="Medium">
+
+                <Button.Image>
+
+                    <OnPlatform x:TypeArguments="FileImageSource">
+
+                        <On Platform="iOS, Android" Value="icons8about80.png" />
+
+                    </OnPlatform>
+
+                </Button.Image>
+
+            </Button>
+
+            <Button ContentLayout="Right, 20" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="White" TextColor="#C0392B" Text="آگهی های من" FontSize="Medium">
+
+                <Button.Image>
+
+                    <OnPlatform x:TypeArguments="FileImageSource">
+
+                        <On Platform="iOS, Android" Value="icons8plus80.png" />
+
+                    </OnPlatform>
+
+                </Button.Image>
+
+            </Button>
+
+            <Button ContentLayout="Top, 20" Grid.Row="2" Grid.Column="0" BackgroundColor="White" TextColor="#C0392B" Text="خروج" FontSize="Medium">
+
+                <Button.Image>
+
+                    <OnPlatform x:TypeArguments="FileImageSource">
+
+                        <On Platform="iOS, Android" Value="icons8delete80.png" />
+
+                    </OnPlatform>
+
+                </Button.Image>
+
+            </Button>
+
+            <Button ContentLayout="Top, 20" Grid.Row="2" Grid.Column="1" BackgroundColor="White" TextColor="#C0392B" Text="تنظیمات" FontSize="Medium">
+
+                <Button.Image>
+
+                    <OnPlatform x:TypeArguments="FileImageSource">
+
+                        <On Platform="iOS, Android" Value="icons8services80.png" />
+
+                    </OnPlatform>
+
+                </Button.Image>
+
+            </Button>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
